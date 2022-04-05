@@ -1,0 +1,96 @@
+// Author: Sofia Gratny
+// Task: builfing a program to rank favorite colors.
+// Date: Feburary 13, 2022
+
+#include <stdio.h>
+int main()
+{
+
+
+	char inputcolor1, inputcolor2, inputcolor3;
+	int inputnumber1, inputnumber2, inputnumber3;
+
+	printf("**Favorite Colors**\nEnter color, space, number: R 1:\n\n ");
+
+	
+	printf("**Enter first favorite color and number of people**  ");
+	scanf("	%c %d", &inputcolor1, &inputnumber1);
+	int realinputnumber1 = inputnumber1;
+
+	
+	printf("**Enter second favorite color and number of people**  ");
+	scanf(" %c %d", &inputcolor2, &inputnumber2);
+	int realinputnumber2 = inputnumber2;
+
+	
+	printf("**Enter third favorite color and number of people**  ");
+	scanf(" %c %d", &inputcolor3, &inputnumber3);
+	int realinputnumber3 = inputnumber3;
+	
+	printf("Rank of Favorite Colors: /n");
+
+	int totalpeople = realinputnumber1 + realinputnumber2 + realinputnumber3;
+	float percent1 = (realinputnumber1 / (totalpeople*1.0)) * 100;
+	float percent2 = (realinputnumber2 / (totalpeople*1.0)) * 100;
+	float percent3 = (realinputnumber3 / (totalpeople*1.0)) * 100;
+
+
+	printf("\n YOUR COLORS: \n");
+	printf("========================\n");
+	printf("|| Percent  |  Color   ||\n");
+	printf("=======================||\n");
+	printf("||  %.2f    |    %c    ||\n", percent1, inputcolor1);
+	printf("||---------------------||\n");
+	printf("||  %.2f    |    %c    ||\n", percent2, inputcolor2);
+	printf("||---------------------||\n");
+	printf("||  %.2f    |    %c    ||\n", percent3, inputcolor3);
+	printf("========================\n");
+
+	if (percent1 >= percent2 && percent1 >= percent3) { 
+	
+	printf("first favorite color and number of people: %c %d %f \n", inputcolor1, realinputnumber1, percent1);
+		; if (percent2 >= percent3) {
+	
+		printf("second favorite color and number of people: %c %d %f \n", inputcolor2, realinputnumber2, percent2);
+		printf("third favorite color and number of people: %c %d %f \n", inputcolor3, realinputnumber3, percent3);
+	
+	
+		} else { 
+	
+
+		printf("second favorite color and number of people: %c %d %f \n", inputcolor3, realinputnumber3, percent3);
+		printf("third favorite color and number of people: %c %d %f \n", inputcolor2, realinputnumber2, percent2);
+	}
+	
+	
+	 } else if (percent2 >= percent1  && percent2 >= percent3) {
+	
+		printf("first favorite color and number of people: %c %d %f \n", inputcolor2, realinputnumber2, percent2);
+	
+	if (percent1 >= percent3) { 
+	
+		printf("second favorite color and number of people: %c %d %f \n", inputcolor1, realinputnumber1, percent1);
+		printf("third favorite color and number of people: %c %d %f \n", inputcolor3, realinputnumber3, percent3);
+	
+	
+	} else {
+
+		printf("third favorite color and number of people: %c %d %f \n", inputcolor1, realinputnumber1, percent1);
+		printf("second favorite color and number of people: %c %d %f \n", inputcolor3, realinputnumber3, percent3);
+}
+	
+
+ 	} else { 
+
+		printf("first favorite color and number of people: %c %d %f \n", inputcolor3, realinputnumber3, percent3);
+
+	if (percent1 >= percent2) {
+	 	printf("second favorite color and number of people: %c %d %f \n", inputcolor1, realinputnumber1, percent1);
+
+	} else { 
+		printf("third favorite color and number of people: %c %d %f \n", inputcolor2, realinputnumber2, percent2);
+}
+}
+
+	return 0;
+}
